@@ -2,8 +2,16 @@
     "name": "Bitmex Extension",
     "version": "1.0",
     "manifest_version": 2,
-    "description": "Chrome extersion for enhanced monitoring of Bitmex recent trades window.",
-    "browser_action": {
-        "default_icon": "icon.png"
-    }
+    "description": "Bitmex Extension",
+    "content_scripts": [{
+        "matches": ["http://*/*/*", "https://*/*/*"],
+        "run_at": "document_end",
+        "js": ["jquery.js", "main.js"]
+    }],
+    "permissions": [
+		"<all_urls>",
+		"tabs",
+		"storage",
+		"clipboardRead"
+	]
 }
