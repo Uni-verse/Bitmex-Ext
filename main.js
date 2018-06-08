@@ -5,7 +5,9 @@ var mutationObserver = new MutationObserver(function(mutations) {
 //      console.log(mutation);
     switch(mutation.target.nodeName) {
         case "text":
-            console.log(mutation); 
+            if((Number(mutation.target.innerHTML)) > 7650){
+                console.log(mutation)
+                ;}
             break;
             
         default: 
