@@ -10,11 +10,12 @@ var mutationObserver = new MutationObserver(function(mutations) {
             for (var i = 0; i < c.length; i++) {
                 var limit = c[1].innerText;
                 limit = limit.replace(',', '');
-                console.log(limit);
                 if(Number(limit) > 9999){
-                    console.log(mutation);
-                    console.log(limit);
+//                    Enable for logging mutation
+//                    console.log(mutation);
+//                    console.log(limit);
                     mutation.target.style.backgroundColor = "Blue";
+                    mutation.target.style.color = "white";
                     break;
                     } 
                 }
