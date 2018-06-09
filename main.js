@@ -10,7 +10,7 @@ var mutationObserver = new MutationObserver(function(mutations) {
             for (var i = 0; i < c.length; i++) {
                 var limit = c[1].innerText;
                 limit = limit.replace(',', '');
-                if(Number(limit) > 9999){
+                if(Number(limit) > 99999){
 //                    Enable for logging mutation
 //                    console.log(mutation);
 //                    console.log(limit);
