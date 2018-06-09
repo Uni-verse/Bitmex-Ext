@@ -8,6 +8,9 @@
         "run_at": "document_end",
         "js": ["jquery.js", "main.js"]
     }],
+    "browser_action": {
+          "default_icon": "icon.png"
+    },
     "permissions": [
 		"<all_urls>",
 		"tabs",
