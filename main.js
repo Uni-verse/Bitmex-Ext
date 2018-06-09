@@ -2,14 +2,23 @@ var targetNode = document.getElementById('content');
 
 var mutationObserver = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
-//      console.log(mutation);
-    switch(mutation.target.nodeName) {
-        case "text":
-            if((Number(mutation.target.innerHTML)) > 7650){
-                console.log(mutation)
-                ;}
-            break;
+
+    switch(mutation.target.className) {
+        case "highlightWrapper":
+            var c = mutation.target.children;
             
+            for (var i = 0; i < c.length; i++) {
+                var limit = c[1].innerText;
+                limit = limit.replace(',', '');
+                console.log(limit);
+                if(Number(limit) > 9999){
+                    console.log(mutation);
+                    console.log(limit);
+                    mutation.target.style.backgroundColor = "Blue";
+                    break;
+                    } 
+                }
+//            console.log(mutation);
         default: 
             break;
     }
