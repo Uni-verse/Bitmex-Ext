@@ -1,16 +1,21 @@
 {
     "name": "Bitmex Extension",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Bitmex Extension",
     "content_scripts": [{
-        "matches": ["http://*/*/*", "https://*/*/*"],
+        "matches": ["http://www.bitmex.com/app/trade/XBTUSD", "https://www.bitmex.com/app/trade/*"],
         "run_at": "document_end",
         "js": ["jquery.js", "main.js"]
     }],
     "browser_action": {
-          "default_icon": "icon.png"
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
     },
+    "background": {
+    "scripts": ["jquery.js", "main.js"],
+    "persistent": false
+  },
     "permissions": [
 		"<all_urls>",
 		"tabs",
